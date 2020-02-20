@@ -10,6 +10,8 @@
 		338284F423FED80E003F4611 /* ASecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338284EA23FED80E003F4611 /* ASecurity.framework */; };
 		338284F923FED80E003F4611 /* ASecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338284F823FED80E003F4611 /* ASecurityTests.swift */; };
 		338284FB23FED80E003F4611 /* ASecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = 338284ED23FED80E003F4611 /* ASecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382851D23FEDEF2003F4611 /* AKeychainServicesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382851C23FEDEF2003F4611 /* AKeychainServicesAPI.swift */; };
+		3382852023FEDF40003F4611 /* AKeychainServicesAPIUnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382851F23FEDF40003F4611 /* AKeychainServicesAPIUnitTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		338284F323FED80E003F4611 /* ASecurityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASecurityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338284F823FED80E003F4611 /* ASecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASecurityTests.swift; sourceTree = "<group>"; };
 		338284FA23FED80E003F4611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3382851C23FEDEF2003F4611 /* AKeychainServicesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKeychainServicesAPI.swift; sourceTree = "<group>"; };
+		3382851F23FEDF40003F4611 /* AKeychainServicesAPIUnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKeychainServicesAPIUnitTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		338284EC23FED80E003F4611 /* ASecurity */ = {
 			isa = PBXGroup;
 			children = (
+				3382851923FEDA7B003F4611 /* KeychainServices */,
 				338284ED23FED80E003F4611 /* ASecurity.h */,
 				338284EE23FED80E003F4611 /* Info.plist */,
 			);
@@ -80,10 +85,27 @@
 		338284F723FED80E003F4611 /* ASecurityTests */ = {
 			isa = PBXGroup;
 			children = (
+				3382851E23FEDF0F003F4611 /* KeychainServices */,
 				338284F823FED80E003F4611 /* ASecurityTests.swift */,
 				338284FA23FED80E003F4611 /* Info.plist */,
 			);
 			path = ASecurityTests;
+			sourceTree = "<group>";
+		};
+		3382851923FEDA7B003F4611 /* KeychainServices */ = {
+			isa = PBXGroup;
+			children = (
+				3382851C23FEDEF2003F4611 /* AKeychainServicesAPI.swift */,
+			);
+			path = KeychainServices;
+			sourceTree = "<group>";
+		};
+		3382851E23FEDF0F003F4611 /* KeychainServices */ = {
+			isa = PBXGroup;
+			children = (
+				3382851F23FEDF40003F4611 /* AKeychainServicesAPIUnitTesting.swift */,
+			);
+			path = KeychainServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +170,7 @@
 				TargetAttributes = {
 					338284E923FED80E003F4611 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					338284F223FED80E003F4611 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -195,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3382851D23FEDEF2003F4611 /* AKeychainServicesAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				338284F923FED80E003F4611 /* ASecurityTests.swift in Sources */,
+				3382852023FEDF40003F4611 /* AKeychainServicesAPIUnitTesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +365,7 @@
 		338284FF23FED80E003F4611 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M4U9YFW795;
@@ -356,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.ihormyroniuk.ASecurity;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +391,7 @@
 		3382850023FED80E003F4611 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M4U9YFW795;
@@ -388,6 +416,7 @@
 		3382850223FED80E003F4611 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4U9YFW795;
 				INFOPLIST_FILE = ASecurityTests/Info.plist;
@@ -406,6 +435,7 @@
 		3382850323FED80E003F4611 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4U9YFW795;
 				INFOPLIST_FILE = ASecurityTests/Info.plist;
