@@ -1,8 +1,8 @@
 //
 //  AKeychainServicesAPIUnitTesting.swift
-//  ASecurityTests
+//  ASecurityUnitTesting
 //
-//  Created by Ihor Myroniuk on 2/20/20.
+//  Created by Ihor Myroniuk on 2/25/20.
 //  Copyright © 2020 ihormyroniuk. All rights reserved.
 //
 
@@ -37,62 +37,6 @@ class AKeychainServicesAPIUnitTesting: XCTestCase {
 
     // MARK: Tests
 
-    func testDataNil() {
-        let item = self.item
-        let dataNil: Data? = nil
-
-        try? setKeychainItemData(item, data: dataNil)
-        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
-
-        XCTAssert(dataNil == itemData, "Set data \(String(describing: dataNil)) is not equal to get data \(String(describing: itemData))`")
-    }
-
-    func testData1() {
-        let item = self.item
-        let data1 = self.data1
-
-        try? setKeychainItemData(item, data: data1)
-        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
-
-        XCTAssert(data1 == itemData, "Set data \(String(describing: data1)) is not equal to get data \(String(describing: itemData))`")
-    }
-
-    func testDataNilData1() {
-        let item = self.item
-        let dataNil = self.dataNil
-        let data1 = self.data1
-
-        try? setKeychainItemData(item, data: dataNil)
-        try? setKeychainItemData(item, data: data1)
-        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
-
-        XCTAssert(data1 == itemData, "Set data \(String(describing: data1)) is not equal to get data \(String(describing: itemData))`")
-    }
-
-    func testData1DataNil() {
-        let item = self.item
-        let data1 = self.data1
-        let dataNil = self.dataNil
-
-        try? setKeychainItemData(item, data: data1)
-        try? setKeychainItemData(item, data: dataNil)
-        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
-
-        XCTAssert(dataNil == itemData, "Set data \(String(describing: dataNil)) is not equal to get data \(String(describing: itemData))`")
-    }
-
-    func testData2Data1() {
-        let item = self.item
-        let data2 = self.dataNil
-        let data1 = self.data1
-
-        try? setKeychainItemData(item, data: data2)
-        try? setKeychainItemData(item, data: data1)
-        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
-
-        XCTAssert(data1 == itemData, "Set data \(String(describing: data1)) is not equal to get data \(String(describing: itemData))`")
-    }
-
     func testClass() {
         let `class` = KeychainItemClassValue.genericPassword
         let expectedClass = kSecClassGenericPassword
@@ -125,6 +69,94 @@ class AKeychainServicesAPIUnitTesting: XCTestCase {
         let itemAccount = item[kSecAttrAccount as String] as? String
 
         XCTAssert(account == itemAccount, "Set account \(account) is not equal to item account \(String(describing: itemAccount))`")
+    }
+
+    func testDataNil() {
+        let item = self.item
+        let dataNil: Data? = nil
+        do {
+            try setKeychainItemData(item, data: dataNil)
+        } catch {
+            XCTAssert(false)
+        }
+
+        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
+
+        XCTAssert(dataNil == itemData, "Set data \(String(describing: dataNil)) is not equal to get data \(String(describing: itemData))`")
+    }
+
+    func testData1() {
+        let item = self.item
+        let data1 = self.data1
+
+        do {
+            try setKeychainItemData(item, data: data1)
+        } catch {
+            XCTAssert(false)
+        }
+        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
+
+        XCTAssert(data1 == itemData, "Set data \(String(describing: data1)) is not equal to get data \(String(describing: itemData))`")
+    }
+
+    func testDataNilData1() {
+        let item = self.item
+        let dataNil = self.dataNil
+        let data1 = self.data1
+
+        do {
+            try setKeychainItemData(item, data: dataNil)
+        } catch {
+            XCTAssert(false)
+        }
+        do {
+            try setKeychainItemData(item, data: data1)
+        } catch {
+            XCTAssert(false)
+        }
+        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
+
+        XCTAssert(data1 == itemData, "Set data \(String(describing: data1)) is not equal to get data \(String(describing: itemData))`")
+    }
+
+    func testData1DataNil() {
+        let item = self.item
+        let data1 = self.data1
+        let dataNil = self.dataNil
+
+        do {
+            try setKeychainItemData(item, data: data1)
+        } catch {
+            XCTAssert(false)
+        }
+        do {
+            try setKeychainItemData(item, data: dataNil)
+        } catch {
+            XCTAssert(false)
+        }
+        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
+
+        XCTAssert(dataNil == itemData, "Set data \(String(describing: dataNil)) is not equal to get data \(String(describing: itemData))`")
+    }
+
+    func testData2Data1() {
+        let item = self.item
+        let data2 = self.dataNil
+        let data1 = self.data1
+
+        do {
+            try setKeychainItemData(item, data: data2)
+        } catch {
+            XCTAssert(false)
+        }
+        do {
+            try setKeychainItemData(item, data: data1)
+        } catch {
+            XCTAssert(false)
+        }
+        let itemData = try? getKeychainItemData(item, matchLimit: .one, returnData: true)
+
+        XCTAssert(data1 == itemData, "Set data \(String(describing: data1)) is not equal to get data \(String(describing: itemData))`")
     }
 
 }
