@@ -13,7 +13,6 @@
 		33182C7E2417E6C100FBF79C /* AGenericPasswordKeychainItemFunctionsUnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33182C7D2417E6C100FBF79C /* AGenericPasswordKeychainItemFunctionsUnitTesting.swift */; };
 		331A198A24056B06002B72E2 /* ASecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = 331A198824056B06002B72E2 /* ASecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		331A199924056B32002B72E2 /* ASecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331A198524056B06002B72E2 /* ASecurity.framework */; };
-		331A19A024056B68002B72E2 /* AKeychainServicesAPIDataUnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A199F24056B68002B72E2 /* AKeychainServicesAPIDataUnitTesting.swift */; };
 		331A19AA24056BF1002B72E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A19A924056BF1002B72E2 /* AppDelegate.swift */; };
 		331A19AC24056BF1002B72E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A19AB24056BF1002B72E2 /* SceneDelegate.swift */; };
 		331A19AE24056BF1002B72E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A19AD24056BF1002B72E2 /* ViewController.swift */; };
@@ -21,7 +20,6 @@
 		331A19B324056BF3002B72E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331A19B224056BF3002B72E2 /* Assets.xcassets */; };
 		331A19B624056BF3002B72E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331A19B424056BF3002B72E2 /* LaunchScreen.storyboard */; };
 		3349DD272412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349DD262412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift */; };
-		3349DD2A2412A8B00042A10E /* AGenericPasswordKeychainItemUnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349DD292412A8B00042A10E /* AGenericPasswordKeychainItemUnitTesting.swift */; };
 		3349DD2D2412AA650042A10E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349DD2C2412AA650042A10E /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +51,6 @@
 		331A198924056B06002B72E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		331A199424056B32002B72E2 /* ASecurityUnitTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASecurityUnitTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		331A199824056B32002B72E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		331A199F24056B68002B72E2 /* AKeychainServicesAPIDataUnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKeychainServicesAPIDataUnitTesting.swift; sourceTree = "<group>"; };
 		331A19A724056BF1002B72E2 /* ASecurityUnitTestingHostApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASecurityUnitTestingHostApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331A19A924056BF1002B72E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		331A19AB24056BF1002B72E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		331A19B524056BF3002B72E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331A19B724056BF3002B72E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3349DD262412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGenericPasswordKeychainItemIdentifier.swift; sourceTree = "<group>"; };
-		3349DD292412A8B00042A10E /* AGenericPasswordKeychainItemUnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGenericPasswordKeychainItemUnitTesting.swift; sourceTree = "<group>"; };
 		3349DD2C2412AA650042A10E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,8 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				33182C7C2417E6A500FBF79C /* GenericPassword */,
-				3349DD292412A8B00042A10E /* AGenericPasswordKeychainItemUnitTesting.swift */,
-				331A199F24056B68002B72E2 /* AKeychainServicesAPIDataUnitTesting.swift */,
 			);
 			path = KeychainServicesAPI;
 			sourceTree = "<group>";
@@ -340,9 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33182C7E2417E6C100FBF79C /* AGenericPasswordKeychainItemFunctionsUnitTesting.swift in Sources */,
-				3349DD2A2412A8B00042A10E /* AGenericPasswordKeychainItemUnitTesting.swift in Sources */,
 				3349DD2D2412AA650042A10E /* Helpers.swift in Sources */,
-				331A19A024056B68002B72E2 /* AKeychainServicesAPIDataUnitTesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

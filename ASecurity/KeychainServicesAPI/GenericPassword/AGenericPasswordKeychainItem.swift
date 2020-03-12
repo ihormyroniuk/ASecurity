@@ -9,12 +9,10 @@
 public struct AGenericPasswordKeychainItem: Equatable, Hashable {
 
     public let identifier: AGenericPasswordKeychainItemIdentifier
-    public var accessGroup: String?
     public var data: Data?
 
-    public init(identifier: AGenericPasswordKeychainItemIdentifier, accessGroup: String?, data: Data?) {
+    public init(identifier: AGenericPasswordKeychainItemIdentifier, data: Data?) {
         self.identifier = identifier
-        self.accessGroup = accessGroup
         self.data = data
     }
 
@@ -22,7 +20,12 @@ public struct AGenericPasswordKeychainItem: Equatable, Hashable {
 
     var dictionary: [String: Any] {
         var dictionary = identifier.dictionary
-        dictionary[kSecAttrAccessGroup as String] = accessGroup
+        dictionary[kSecValueData as String] = data
+        return dictionary
+    }
+
+    var dictionaryToUpdate: [String: Any] {
+        var dictionary: [String: Any] = [:]
         dictionary[kSecValueData as String] = data
         return dictionary
     }

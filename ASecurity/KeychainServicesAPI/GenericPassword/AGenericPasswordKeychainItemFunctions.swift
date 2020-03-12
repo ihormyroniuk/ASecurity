@@ -19,7 +19,7 @@ public func selectGenericPasswordKeychainItem(identifier: AGenericPasswordKeycha
         guard let dictionary = result as? [String: Any] else { return nil }
         let accessGroup = dictionary[kSecAttrAccessGroup as String] as? String
         let data = dictionary[kSecValueData as String] as? Data
-        let genericPasswordKeychainItem = AGenericPasswordKeychainItem(identifier: identifier, accessGroup: accessGroup, data: data)
+        let genericPasswordKeychainItem = AGenericPasswordKeychainItem(identifier: identifier, data: data)
         return genericPasswordKeychainItem
     } else if status == errSecItemNotFound {
         return nil
@@ -30,15 +30,18 @@ public func selectGenericPasswordKeychainItem(identifier: AGenericPasswordKeycha
 
 public func createGenericPasswordKeychainItem(_ item: AGenericPasswordKeychainItem) throws {
     let attributes = item.dictionary
-    let status = SecItemAdd(attributes as CFDictionary, nil)
+    var result: AnyObject?
+    let status = withUnsafeMutablePointer(to: &result) {
+        SecItemAdd(attributes as CFDictionary, UnsafeMutablePointer($0))
+    }
     if status != noErr {
-         throw AKeychainServicesAPIError(status: status)
+        throw AKeychainServicesAPIError(status: status)
     }
 }
 
 public func updateGenericPasswordKeychainItem(_ item: AGenericPasswordKeychainItem) throws {
     let query = item.identifier.dictionary
-    let attributesToUpdate = item.dictionary
+    let attributesToUpdate = item.dictionaryToUpdate
     let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
     if status != noErr {
         throw AKeychainServicesAPIError(status: status)
