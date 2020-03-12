@@ -6,7 +6,7 @@
 //  Copyright © 2020 ihormyroniuk. All rights reserved.
 //
 
-public struct AGenericPasswordKeychainItem {
+public struct AGenericPasswordKeychainItem: Equatable, Hashable {
 
     public let identifier: AGenericPasswordKeychainItemIdentifier
     public var accessGroup: String?

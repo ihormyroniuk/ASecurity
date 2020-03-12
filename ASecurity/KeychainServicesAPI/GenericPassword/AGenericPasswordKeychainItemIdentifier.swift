@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct AGenericPasswordKeychainItemIdentifier {
+public struct AGenericPasswordKeychainItemIdentifier: Equatable, Hashable {
 
     private let service: String
     private let account: String

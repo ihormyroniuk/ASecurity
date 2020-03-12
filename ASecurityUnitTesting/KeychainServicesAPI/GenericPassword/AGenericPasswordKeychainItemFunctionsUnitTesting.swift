@@ -18,7 +18,7 @@ class AGenericPasswordKeychainItemFunctionsUnitTesting: XCTestCase {
         return keychainItemIdentifier
     }
 
-    private let accessGroup = "me.ihormyroniuk.ASecurityUnitTestingHostApplication.accessGroup"
+    private let accessGroup = "accessGroup"
     private let data: Data = Data([0x75, 0x43, 0x52, 0x54])
     private var keychainItem: AGenericPasswordKeychainItem {
         let identifier = keychainItemIdentifier
@@ -39,7 +39,7 @@ class AGenericPasswordKeychainItemFunctionsUnitTesting: XCTestCase {
         }
         do {
             let keychainItem = try selectGenericPasswordKeychainItem(identifier: keychainItemIdentifier)
-            print("sdf")
+            print()
         } catch {
             XCTAssert(false, "Keychain item selection throws error \(error).")
         }
