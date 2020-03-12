@@ -11,14 +11,14 @@ import XCTest
 
 class AGenericPasswordKeychainItemFunctionsUnitTesting: XCTestCase {
 
-    private let service = "service1f"
-    private let account = "account1f"
+    private let service = "service"
+    private let account = "account"
     private var keychainItemIdentifier: AGenericPasswordKeychainItemIdentifier {
         let keychainItemIdentifier = AGenericPasswordKeychainItemIdentifier(service: service, account: account)
         return keychainItemIdentifier
     }
 
-    private let accessGroup = "accessGroup"
+    private let accessGroup = "me.ihormyroniuk.ASecurityUnitTestingHostApplication.accessGroup"
     private let data: Data = Data([0x75, 0x43, 0x52, 0x54])
     private var keychainItem: AGenericPasswordKeychainItem {
         let identifier = keychainItemIdentifier
@@ -27,6 +27,11 @@ class AGenericPasswordKeychainItemFunctionsUnitTesting: XCTestCase {
     }
 
     func testCreate() {
+        do {
+            try deleteGenericPasswordKeychainItem(identifier: keychainItemIdentifier)
+        } catch {
+            XCTAssert(false, "Keychain item deletion throws error \(error.localizedDescription).")
+        }
         do {
             try createGenericPasswordKeychainItem(keychainItem)
         } catch {
