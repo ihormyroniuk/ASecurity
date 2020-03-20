@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330CBB6D24217AA800020614 /* Accessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBB6C24217AA800020614 /* Accessible.swift */; };
 		33182C6A2417A61B00FBF79C /* AKeychainServicesAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33182C692417A61B00FBF79C /* AKeychainServicesAPIError.swift */; };
 		33182C782417D7BB00FBF79C /* AGenericPasswordKeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33182C772417D7BB00FBF79C /* AGenericPasswordKeychainItem.swift */; };
 		33182C7B2417D99E00FBF79C /* AGenericPasswordKeychainItemFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33182C7A2417D99E00FBF79C /* AGenericPasswordKeychainItemFunctions.swift */; };
@@ -19,7 +20,6 @@
 		331A19B124056BF1002B72E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331A19AF24056BF1002B72E2 /* Main.storyboard */; };
 		331A19B324056BF3002B72E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331A19B224056BF3002B72E2 /* Assets.xcassets */; };
 		331A19B624056BF3002B72E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331A19B424056BF3002B72E2 /* LaunchScreen.storyboard */; };
-		3349DD272412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3349DD262412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330CBB6C24217AA800020614 /* Accessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessible.swift; sourceTree = "<group>"; };
 		33182C692417A61B00FBF79C /* AKeychainServicesAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKeychainServicesAPIError.swift; sourceTree = "<group>"; };
 		33182C772417D7BB00FBF79C /* AGenericPasswordKeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGenericPasswordKeychainItem.swift; sourceTree = "<group>"; };
 		33182C7A2417D99E00FBF79C /* AGenericPasswordKeychainItemFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGenericPasswordKeychainItemFunctions.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		331A19B224056BF3002B72E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		331A19B524056BF3002B72E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331A19B724056BF3002B72E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3349DD262412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGenericPasswordKeychainItemIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,6 @@
 		33182C792417D83600FBF79C /* GenericPassword */ = {
 			isa = PBXGroup;
 			children = (
-				3349DD262412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift */,
 				33182C772417D7BB00FBF79C /* AGenericPasswordKeychainItem.swift */,
 				33182C7A2417D99E00FBF79C /* AGenericPasswordKeychainItemFunctions.swift */,
 			);
@@ -162,6 +161,7 @@
 		3349DD212412A5B60042A10E /* KeychainServicesAPI */ = {
 			isa = PBXGroup;
 			children = (
+				330CBB6C24217AA800020614 /* Accessible.swift */,
 				33182C792417D83600FBF79C /* GenericPassword */,
 				33182C692417A61B00FBF79C /* AKeychainServicesAPIError.swift */,
 			);
@@ -319,8 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3349DD272412A7BC0042A10E /* AGenericPasswordKeychainItemIdentifier.swift in Sources */,
 				33182C782417D7BB00FBF79C /* AGenericPasswordKeychainItem.swift in Sources */,
+				330CBB6D24217AA800020614 /* Accessible.swift in Sources */,
 				33182C6A2417A61B00FBF79C /* AKeychainServicesAPIError.swift in Sources */,
 				33182C7B2417D99E00FBF79C /* AGenericPasswordKeychainItemFunctions.swift in Sources */,
 			);

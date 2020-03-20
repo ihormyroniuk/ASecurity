@@ -17,8 +17,8 @@ public func selectGenericPasswordKeychainItem(identifier: AGenericPasswordKeycha
     }
     if status == noErr {
         guard let dictionary = result as? [String: Any] else { return nil }
-        let data = dictionary[kSecValueData as String] as? Data
-        let genericPasswordKeychainItem = AGenericPasswordKeychainItem(identifier: identifier, data: data)
+        guard let genericPasswordKeychainItem = AGenericPasswordKeychainItem(dictionary: dictionary) else { return nil }
+        guard genericPasswordKeychainItem.identifier == identifier else { return nil }
         return genericPasswordKeychainItem
     } else if status == errSecItemNotFound {
         return nil
