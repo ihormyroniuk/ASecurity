@@ -8,9 +8,8 @@
 
 import Security
 
-public struct AGenericPasswordKeychainItemIdentifier: Equatable, Hashable {
+public struct GenericPasswordKeychainItemIdentifier: Equatable, Hashable {
 
-    private let `class` = kSecClassGenericPassword
     private let service: String
     private let account: String
     private let accessGroup: String
@@ -35,7 +34,7 @@ public struct AGenericPasswordKeychainItemIdentifier: Equatable, Hashable {
 
     var dictionary: [String: Any] {
         var dictionary = [String: Any]()
-        dictionary[kSecClass as String] = `class`
+        dictionary[kSecClass as String] = kSecClassGenericPassword as String
         dictionary[kSecAttrService as String] = service
         dictionary[kSecAttrAccount as String] = account
         dictionary[kSecAttrAccessGroup as String] = accessGroup
