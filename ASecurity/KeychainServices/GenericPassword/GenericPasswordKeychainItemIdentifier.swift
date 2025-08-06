@@ -1,11 +1,3 @@
-//
-//  AGenericPasswordKeychainItemIdentifier.swift
-//  ASecurity
-//
-//  Created by Ihor Myroniuk on 22.06.2020.
-//  Copyright © 2020 ihormyroniuk. All rights reserved.
-//
-
 import Security
 
 public struct GenericPasswordKeychainItemIdentifier: Equatable, Hashable {
