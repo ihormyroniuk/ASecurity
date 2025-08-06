@@ -1,3 +1,4 @@
+import Foundation
 import Security
 
 public struct GenericPasswordKeychainItemIdentifier: Equatable, Hashable {

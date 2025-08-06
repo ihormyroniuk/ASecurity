@@ -1,3 +1,4 @@
+import Foundation
 import Security
 
 public func selectGenericPasswordKeychainItem(identifier: GenericPasswordKeychainItemIdentifier) throws -> GenericPasswordKeychainItem? {

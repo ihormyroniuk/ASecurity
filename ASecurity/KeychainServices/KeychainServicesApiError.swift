@@ -1,3 +1,6 @@
+import Foundation
+import Security
+
 public struct KeychainServicesApiError: Error, CustomStringConvertible {
     
     let status: OSStatus
