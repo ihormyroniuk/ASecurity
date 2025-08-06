@@ -5,10 +5,10 @@ public struct GenericPasswordKeychainItemIdentifier: Equatable, Hashable {
 
     private let service: String
     private let account: String
-    private let accessGroup: String
-    private let isSynchronizable: Bool
+    private let accessGroup: String?
+    private let isSynchronizable: Bool?
 
-    public init(service: String, account: String, accessGroup: String, isSynchronizable: Bool) {
+    public init(service: String, account: String, accessGroup: String?, isSynchronizable: Bool?) {
         self.service = service
         self.account = account
         self.accessGroup = accessGroup
@@ -20,8 +20,8 @@ public struct GenericPasswordKeychainItemIdentifier: Equatable, Hashable {
     init?(dictionary: [String: Any]) {
         guard let service = dictionary[kSecAttrService as String] as? String else { return nil }
         guard let account = dictionary[kSecAttrAccount as String] as? String else { return nil }
-        guard let accessGroup = dictionary[kSecAttrAccessGroup as String] as? String else { return nil }
-        guard let isSynchronizable = dictionary[kSecAttrSynchronizable as String] as? Bool else { return nil }
+        let accessGroup = dictionary[kSecAttrAccessGroup as String] as? String
+        let isSynchronizable = dictionary[kSecAttrSynchronizable as String] as? Bool
         self.init(service: service, account: account, accessGroup: accessGroup, isSynchronizable: isSynchronizable)
     }
 
